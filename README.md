@@ -5,10 +5,10 @@ The content within this repository is to configure and set up a Jenkins pipeline
 
 ## Table of Contents
 
-- [Introduction](https://github.com/wheelinventor/mq-pipeline#introduction)
-- [Prerequisite](https://github.com/wheelinventor/mq-pipeline#prerequisite)
-- [Configuring Jenkins and pipeline](https://github.com/wheelinventor/mq-pipeline#configuring-jenkins-and-pipeline) 
-- [Trigger a Jenkins Build to deploy a queue manager](https://github.com/wheelinventor/mq-pipeline#trigger-a-jenkins-build-to-deploy-a-queue-manager)
+- [Introduction](https://github.com/Telstra-mq-hub/mq-pipeline#introduction)
+- [Prerequisite](https://github.com/Telstra-mq-hub/mq-pipeline#prerequisite)
+- [Configuring Jenkins and pipeline](https://github.com/Telstra-mq-hub/mq-pipeline#configuring-jenkins-and-pipeline) 
+- [Trigger a Jenkins Build to deploy a queue manager](https://github.com/Telstra-mq-hub/mq-pipeline#trigger-a-jenkins-build-to-deploy-a-queue-manager)
 ## Prerequisite
 
 - Red Hat OpenShift cluster
