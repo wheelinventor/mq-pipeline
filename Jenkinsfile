@@ -7,10 +7,10 @@ pipeline {
         STORAGE_CLASS       = "ocs-storagecluster-cephfs"
         QMGR_NAME           = "QM1"
         CHANNEL_NAME        = "QM1CHL"
-        LICENSE             = "L-RJON-BZFQU2"
+        LICENSE             = "L-RJON-CD3JKX"
         METRIC              = "VirtualProcessorCore"
         USE                 = "NonProduction"
-        VERSION             = "9.2.3.0-r1"
+        VERSION             = "9.3.0.0-r1"
         AVAILABILITY        = "SingleInstance"
     }
     stages {
