@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         IBM_ENTITLEMENT_KEY = credentials('ibm_entitlement_key')
-        RELEASE_NAME        = "qm-demo-7"        
+        RELEASE_NAME        = "qm-demo-8"        
         NAMESPACE           = "mq"
         STORAGE_CLASS       = "ocs-storagecluster-cephfs"
         QMGR_NAME           = "QM1"
@@ -11,10 +11,10 @@ pipeline {
         USE                 = "NonProduction"
         // LICENSE             = "L-RJON-BZFQU2"
         // VERSION             = "9.2.3.0-r1"
-        // LICENSE             = "L-RJON-C7QG3S"
-        // VERSION             = "9.2.5.0-r3"
-        LICENSE             = "L-RJON-CD3JKX"
-        VERSION             = "9.3.0.0-r1"
+        LICENSE             = "L-RJON-C7QG3S"
+        VERSION             = "9.2.5.0-r3"
+        // LICENSE             = "L-RJON-CD3JKX"
+        // VERSION             = "9.3.0.0-r1"
         AVAILABILITY        = "SingleInstance"
     }
     stages {
