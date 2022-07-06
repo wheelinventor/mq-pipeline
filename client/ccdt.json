@@ -5,7 +5,7 @@
       "clientConnection": {
         "connection": [
           {
-            "host": "qm-demo-ibm-mq-qm-mq.itzroks-3100014jjh-aw8m52-6ccd7f378ae819553d37d5f2ee142bd6-0000.au-syd.containers.appdomain.cloud",
+            "host": "qm-demo-ha-ibm-mq-qm-mq.itzroks-663002388p-fxba7u-6ccd7f378ae819553d37d5f2ee142bd6-0000.au-syd.containers.appdomain.cloud",
             "port": 443
           }
         ],
