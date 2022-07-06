@@ -26,16 +26,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                parallel(
-                    a: {
-                        echo 'Start testing'
-                        sh('./client/mq-put.sh ${RELEASE_NAME} ${NAMESPACE}')
-                    },
-                    b: {
-                        echo 'Deploy ~ deploy queue manager'
-                        sh('./scripts/02-deploy.sh ${RELEASE_NAME} ${NAMESPACE} ${STORAGE_CLASS} ${QMGR_NAME} ${CHANNEL_NAME} ${LICENSE} ${METRIC} ${USE} ${VERSION} ${AVAILABILITY}')
-                    }
-                )
+                echo 'Deploy ~ deploy queue manager'
+                sh('./scripts/02-deploy.sh ${RELEASE_NAME} ${NAMESPACE} ${STORAGE_CLASS} ${QMGR_NAME} ${CHANNEL_NAME} ${LICENSE} ${METRIC} ${USE} ${VERSION} ${AVAILABILITY}')
             }
         }
         // stage('Post-Deploy') {
