@@ -24,6 +24,7 @@ function wait_for () {
     fi
     echo "Installation status: $STATUS"
     if [ "$STATUS" == ${OBJ_READY_STATUS} ]; then
+      sleep 30
       break
     fi
     

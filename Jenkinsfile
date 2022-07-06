@@ -29,7 +29,7 @@ pipeline {
                 parallel(
                     a: {
                         echo 'Start testing'
-                        sh('./client/mq-put.sh')
+                        sh('./client/mq-put.sh ${RELEASE_NAME} ${NAMESPACE}')
                     },
                     b: {
                         echo 'Deploy ~ deploy queue manager'
