@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         IBM_ENTITLEMENT_KEY = credentials('ibm_entitlement_key')
-        RELEASE_NAME        = "qm-native-mqsc-dedcef"        
+        RELEASE_NAME        = "qm-native-mqsc-dew"        
         NAMESPACE           = "mq"
         STORAGE_CLASS       = "ocs-storagecluster-cephfs"
         QMGR_NAME           = "QM1"
@@ -30,6 +30,13 @@ pipeline {
                 sh('./scripts/02-deploy.sh ${RELEASE_NAME} ${NAMESPACE} ${STORAGE_CLASS} ${QMGR_NAME} ${CHANNEL_NAME} ${LICENSE} ${METRIC} ${USE} ${VERSION} ${AVAILABILITY}')
             }
         }
+
+        // stage('Test') {
+        //     steps {
+        //         echo 'Test ~ start test stub'
+        //         sh('')
+        //     }
+        // }
         // stage('Post-Deploy') {
         //     steps {
         //         echo 'Post-Deploy'
