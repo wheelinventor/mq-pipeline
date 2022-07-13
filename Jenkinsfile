@@ -30,13 +30,12 @@ pipeline {
                 sh('./scripts/02-deploy.sh ${RELEASE_NAME} ${NAMESPACE} ${STORAGE_CLASS} ${QMGR_NAME} ${CHANNEL_NAME} ${LICENSE} ${METRIC} ${USE} ${VERSION} ${AVAILABILITY}')
             }
         }
-
-        // stage('Test') {
-        //     steps {
-        //         echo 'Test ~ start test stub'
-        //         sh('')
-        //     }
-        // }
+        stage('Testing') {
+            steps {
+                echo 'Testing ~ test the queue manager'
+                sh('oc apply -f ./scripts/testing-job.yaml -n mq')
+            }
+        }
         // stage('Post-Deploy') {
         //     steps {
         //         echo 'Post-Deploy'
