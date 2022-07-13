@@ -35,7 +35,7 @@ availability=${10:-SingleInstance}
 
 ## generate mqsc
 ( echo "cat <<EOF" ; cat ./config/config.mqsc.tmpl; echo EOF ) | \
-# channel_name=${channel_name} \
+channel_name=${channel_name} \
 sh > ./config/config.mqsc
 
 ## indent content in file
