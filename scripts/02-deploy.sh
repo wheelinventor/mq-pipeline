@@ -65,8 +65,7 @@ sh > ./config/queuemanager.yaml
 cat ./config/queuemanager.yaml
 
 ## create queuemanager
-oc apply -f config/queuemanager.yaml  
-sleep 30
+oc apply -f config/queuemanager.yaml
 
 ## wait for queuemanager to be running
 wait_for ${release_name} QueueManager ${namespace} "Running"
