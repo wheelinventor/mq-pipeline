@@ -4,9 +4,9 @@ pipeline {
         IBM_ENTITLEMENT_KEY = credentials('ibm_entitlement_key')
         RELEASE_NAME        = "qm-native-mqsc-cedges"        
         NAMESPACE           = "mq"
-        STORAGE_CLASS       = "ocs-storagecluster-cephfs"
+        STORAGE_CLASS       = "ocs-storagecluster-tedge"
         QMGR_NAME           = "QM1"
-        CHANNEL_NAME        = "ACE.CONN"
+        CHANNEL_NAME        = "QM1CHL"
         METRIC              = "VirtualProcessorCore"
         USE                 = "Production"
         // LICENSE             = "L-RJON-BZFQU2"

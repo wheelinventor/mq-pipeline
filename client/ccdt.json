@@ -1,11 +1,11 @@
 {
   "channel": [
     {
-      "name": "QM1CHL",
+      "name": "ACE.CONN",
       "clientConnection": {
         "connection": [
           {
-            "host": "qm-tel-native-ha-demo-ibm-mq-qm-mq.itzroks-663002388p-fxba7u-6ccd7f378ae819553d37d5f2ee142bd6-0000.au-syd.containers.appdomain.cloud",
+            "host": "qm-native-mqsc-cda-ibm-mq-qm-mq.itzroks-663002388p-fxba7u-6ccd7f378ae819553d37d5f2ee142bd6-0000.au-syd.containers.appdomain.cloud",
             "port": 443
           }
         ],
