@@ -2,11 +2,11 @@ pipeline {
     agent any
     environment {
         IBM_ENTITLEMENT_KEY = credentials('ibm_entitlement_key')
-        RELEASE_NAME        = "qm-native-mqsc-dfer"        
+        RELEASE_NAME        = "qm-native-mqsc-fhef"        
         NAMESPACE           = "mq"
         STORAGE_CLASS       = "ocs-storagecluster-cephfs"
         QMGR_NAME           = "QM1"
-        CHANNEL_NAME        = "QM1CHL"
+        CHANNEL_NAME        = "ACE.CONN"
         QUEUE_NAME          = "APPQ"
         METRIC              = "VirtualProcessorCore"
         USE                 = "Production"
