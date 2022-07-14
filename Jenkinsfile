@@ -10,8 +10,6 @@ pipeline {
         QUEUE_NAME          = "APPQ"
         METRIC              = "VirtualProcessorCore"
         USE                 = "Production"
-        // LICENSE             = "L-RJON-BZFQU2"
-        // VERSION             = "9.2.3.0-r1"
         // LICENSE             = "L-RJON-C7QG3S"
         // VERSION             = "9.2.5.0-r3"
         LICENSE             = "L-RJON-CD3JKX"

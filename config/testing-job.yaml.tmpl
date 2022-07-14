@@ -20,6 +20,5 @@ spec:
             - name: QUEUE_NAME
               value: ${queue_name}
           command: ["/bin/sh","-c"]
-          # todo: replace env.json
-          args: ["sh ./runTest.sh; sleep 30000"]
+          args: ["sh ./runTest.sh"]
       restartPolicy: Never
