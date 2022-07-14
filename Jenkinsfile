@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         IBM_ENTITLEMENT_KEY = credentials('ibm_entitlement_key')
-        RELEASE_NAME        = "qm-native-mqsc-cdt"        
+        RELEASE_NAME        = "qm-native-mqsc-fcry"        
         NAMESPACE           = "mq"
         STORAGE_CLASS       = "ocs-storagecluster-cephfs"
         QMGR_NAME           = "QM1"
@@ -16,7 +16,7 @@ pipeline {
         // VERSION             = "9.2.5.0-r3"
         LICENSE             = "L-RJON-CD3JKX"
         VERSION             = "9.3.0.0-r1"
-        AVAILABILITY        = "NativeHA"
+        AVAILABILITY        = "SingleInstance"
     }
     stages {
         stage('Pre Deploy') {
