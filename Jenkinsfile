@@ -7,6 +7,7 @@ pipeline {
         STORAGE_CLASS       = "ocs-storagecluster-cephfs"
         QMGR_NAME           = "QM1"
         CHANNEL_NAME        = "QM1CHL"
+        QUEUE_NAME          = "APPQ"
         METRIC              = "VirtualProcessorCore"
         USE                 = "Production"
         // LICENSE             = "L-RJON-BZFQU2"
@@ -27,25 +28,26 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploy ~ deploy queue manager'
-                sh('./scripts/02-deploy.sh ${RELEASE_NAME} ${NAMESPACE} ${STORAGE_CLASS} ${QMGR_NAME} ${CHANNEL_NAME} ${LICENSE} ${METRIC} ${USE} ${VERSION} ${AVAILABILITY}')
+                sh('./scripts/02-deploy.sh ${RELEASE_NAME} ${NAMESPACE} ${STORAGE_CLASS} ${QMGR_NAME} ${CHANNEL_NAME} ${LICENSE} ${METRIC} ${USE} ${VERSION} ${AVAILABILITY} ${QUEUE_NAME}')
             }
         }
         stage('Testing') {
             steps {
                 echo 'Testing ~ test the queue manager'
-                sh('oc apply -f ./scripts/testing-job.yaml -n mq')
+                sh('./scripts/03-testing.sh ${CHANNEL_NAME} ${QUEUE_NAME}')
+                sh('oc apply -f ./config/testing-job.yaml -n ${NAMESPACE}')
             }
         }
         // stage('Post-Deploy') {
         //     steps {
         //         echo 'Post-Deploy'
-        //         sh('./scripts/03-post-deploy.sh ${RELEASE_NAME} ${NAMESPACE}')
+        //         sh('./scripts/04-post-deploy.sh ${RELEASE_NAME} ${NAMESPACE}')
         //     }
         // }
         // stage('uninstall') {
         //     steps {
         //         echo 'Uninstall queue manager'
-        //         sh('./scripts/04-uninstall.sh ${RELEASE_NAME} ${NAMESPACE}')
+        //         sh('./scripts/05-uninstall.sh ${RELEASE_NAME} ${NAMESPACE}')
         //     }
         // }
     }

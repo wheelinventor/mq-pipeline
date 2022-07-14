@@ -1,0 +1,25 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: mq-test
+  namespace: mq
+spec:
+  selector: {}
+  template:
+    metadata:
+      name: mq-test
+    spec:
+      containers:
+        - name: mq-test
+          image: image-registry.openshift-image-registry.svc:5000/mq/testing:latest
+          env:
+            - name: MQ_HOST
+              value: ${mq_host}
+            - name: MQ_CHANNEL
+              value: ${channel_name}
+            - name: QUEUE_NAME
+              value: ${queue_name}
+          command: ["/bin/sh","-c"]
+          # todo: replace env.json
+          args: ["sh ./runTest.sh; sleep 30000"]
+      restartPolicy: Never

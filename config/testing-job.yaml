@@ -10,10 +10,9 @@ spec:
       name: mq-test
     spec:
       containers:
-        - name: mq-test
+        - name: fbeuwfbuewnewubcewufchi
           image: image-registry.openshift-image-registry.svc:5000/mq/testing:latest
           command: ["/bin/sh","-c"]
           # todo: replace env.json
           args: ["cat env.json; sh runTest.sh"]
       restartPolicy: Never
-

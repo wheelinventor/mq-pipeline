@@ -32,10 +32,12 @@ metric=${7:-VirtualProcessorCore}
 use=${8:-NonProduction}
 version=${9:-9.2.3.0-r1}
 availability=${10:-SingleInstance}
+queue_name=${11:-APPQ}
 
 ## generate mqsc
 ( echo "cat <<EOF" ; cat ./config/config.mqsc.tmpl; echo EOF ) | \
 channel_name=${channel_name} \
+queue_name=${queue_name}
 sh > ./config/config.mqsc
 
 ## indent content in file
