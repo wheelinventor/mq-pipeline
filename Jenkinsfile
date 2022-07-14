@@ -36,6 +36,7 @@ pipeline {
                 echo 'Testing ~ test the queue manager'
                 sh('./scripts/03-testing.sh ${CHANNEL_NAME} ${QUEUE_NAME} ${RELEASE_NAME} ${NAMESPACE}')
                 sh('oc apply -f ./config/testing-job.yaml -n ${NAMESPACE}')
+                sh('oc logs job/mq-test-${RELEASE_NAME} -n ${NAMESPACE}')
             }
         }
         // stage('Post-Deploy') {
