@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         IBM_ENTITLEMENT_KEY = credentials('ibm_entitlement_key')
-        RELEASE_NAME        = "qm-test-yiu"        
+        RELEASE_NAME        = "qm-test-sysd"        
         NAMESPACE           = "mq"
         STORAGE_CLASS       = "ocs-storagecluster-cephfs"
         QMGR_NAME           = "QM1"
@@ -32,8 +32,10 @@ pipeline {
         stage('Testing') {
             steps {
                 echo 'Testing ~ test the queue manager'
+                sh('sleep 60')
                 sh('./scripts/03-testing.sh ${CHANNEL_NAME} ${QUEUE_NAME} ${RELEASE_NAME} ${NAMESPACE}')
                 sh('oc apply -f ./config/testing-job.yaml -n ${NAMESPACE}')
+                sh('sleep 60')
                 sh('oc logs job/mq-test-${RELEASE_NAME} -n ${NAMESPACE}')
             }
         }
