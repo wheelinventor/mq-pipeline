@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         IBM_ENTITLEMENT_KEY = credentials('ibm_entitlement_key')
-        RELEASE_NAME        = "qm-test-ddgwb"        
+        RELEASE_NAME        = "qm-test-HA-hdws"        
         NAMESPACE           = "mq-test"
         STORAGE_CLASS       = "ocs-storagecluster-cephfs"
         QMGR_NAME           = "QM1"
@@ -14,7 +14,7 @@ pipeline {
         // VERSION             = "9.2.5.0-r3"
         LICENSE             = "L-RJON-CD3JKX"
         VERSION             = "9.3.0.0-r1"
-        AVAILABILITY        = "SingleInstance"
+        AVAILABILITY        = "NativeHA"
     }
     stages {
         stage('Pre Deploy') {
