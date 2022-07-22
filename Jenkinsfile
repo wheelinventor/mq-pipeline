@@ -3,7 +3,7 @@ pipeline {
     environment {
         IBM_ENTITLEMENT_KEY = credentials('ibm_entitlement_key')
         RELEASE_NAME        = "qm-test-ha-hdws"        
-        NAMESPACE           = "mq"
+        NAMESPACE           = "mq-test"
         STORAGE_CLASS       = "ocs-storagecluster-cephfs"
         QMGR_NAME           = "QM1"
         CHANNEL_NAME        = "ACE.CONN"
