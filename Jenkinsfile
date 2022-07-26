@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         IBM_ENTITLEMENT_KEY = credentials('ibm_entitlement_key')
-        RELEASE_NAME        = "qm-test-ha-test-2"        
+        RELEASE_NAME        = "qm-test-ha-test-3"        
         NAMESPACE           = "mq-test"
         STORAGE_CLASS       = "ocs-storagecluster-cephfs"
         QMGR_NAME           = "QM1"
@@ -21,10 +21,6 @@ pipeline {
             steps {
                 echo 'Pre-Deploy ~ setup configuration before deploy'
                 sh('./scripts/01-pre-deploy.sh ${IBM_ENTITLEMENT_KEY} ${RELEASE_NAME} ${NAMESPACE}')
-                echo 'Pre-Deploy ~ generate certificates'
-                sh('cd ./certs')
-                sh('./generate-certs.sh')
-                sh('cd ..')
             }
         }
         stage('Deploy') {
