@@ -22,7 +22,7 @@ pipeline {
                 echo 'Pre-Deploy ~ setup configuration before deploy'
                 sh('./scripts/01-pre-deploy.sh ${IBM_ENTITLEMENT_KEY} ${RELEASE_NAME} ${NAMESPACE}')
                 echo 'Pre-Deploy ~ generate certificates'
-                sh('cd certs')
+                sh('cd ./certs')
                 sh('./generate-certs.sh')
                 sh('cd ..')
             }
@@ -33,12 +33,12 @@ pipeline {
                 sh('./scripts/02-deploy.sh ${RELEASE_NAME} ${NAMESPACE} ${STORAGE_CLASS} ${QMGR_NAME} ${CHANNEL_NAME} ${LICENSE} ${METRIC} ${USE} ${VERSION} ${AVAILABILITY} ${QUEUE_NAME}')
             }
         }
-        stage('Testing') {
-            steps {
-                echo 'Testing ~ test the queue manager'
-                sh('./scripts/03-testing.sh ${CHANNEL_NAME} ${QUEUE_NAME} ${RELEASE_NAME} ${NAMESPACE}')
-            }
-        }
+        // stage('Testing') {
+        //     steps {
+        //         echo 'Testing ~ test the queue manager'
+        //         sh('./scripts/03-testing.sh ${CHANNEL_NAME} ${QUEUE_NAME} ${RELEASE_NAME} ${NAMESPACE}')
+        //     }
+        // }
         // stage('Post-Deploy') {
         //     steps {
         //         echo 'Post-Deploy'
